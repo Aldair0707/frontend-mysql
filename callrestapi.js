@@ -1,5 +1,5 @@
 //var url = "http://localhost:3300/api/users";
-var url = "https://mysql-api-dt0f.onrender.com/api/users";
+var url = "https://mysql-api-2cl5.onrender.com/api/users";
 
 function postUser() {
 
