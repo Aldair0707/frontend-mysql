@@ -1,49 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REST API Usuarios</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-    <p><i class="fas fa-user"></i> Consumo de REST-API de Usuarios</p>
+    <header>
+        <h1><i class="fas fa-user"></i> Consumo de REST-API de Usuarios</h1>
+    </header>
 
-    <div>
-        <label>Nombre </label>
-        <input type="text" id="name">
-    </div>
-    <div>
-        <label>Email </label>
-        <input type="email" id="email">
-    </div>
-    <div>
-        <label>Edad </label>
-        <input type="number" id="age">
-    </div>
-    <div>
-        <label>Comentarios </label>
-        <input type="text" id="comments">
-    </div>
+    <div class="container">
+        <!-- Formulario de entrada -->
+        <div>
+            <label for="name">Nombre</label>
+            <input type="text" id="name" placeholder="Introduce el nombre">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Introduce el email">
+        </div>
+        <div>
+            <label for="age">Edad</label>
+            <input type="number" id="age" placeholder="Introduce la edad">
+        </div>
+        <div>
+            <label for="comments">Comentarios</label>
+            <input type="text" id="comments" placeholder="Añadir comentarios">
+        </div>
 
-    <br>
-    <p>
-        Get by ID
-    </p>
-    <div>
-        <label>ID de usuario </label>
-        <input type="text" id="id-user">
-        <button onclick="getUserById()">Get user</button>
+        <!-- Botones para crear y obtener usuarios -->
+        <div class="user-buttons">
+            <button id="btn-create-user" onclick="postUser()"><i class="fas fa-user-plus"></i> Crear Usuario</button>
+            <button id="btn-get-users" onclick="getUsers()"><i class="fas fa-users"></i> Obtener Usuarios</button>
+        </div>
+
+        <!-- Sección para obtener usuario por ID -->
+        <div>
+            <p><strong>Get by ID</strong></p>
+            <label for="id-user">ID de usuario</label>
+            <div class="id-user-container">
+                <input type="text" id="id-user" placeholder="Introduce el ID del usuario">
+                <button id="btn-get-user" onclick="getUserById()">Obtener Usuario</button>
+            </div>
+        </div>
+
+        <!-- Botón para actualizar usuario -->
+        <button id="btn-update-user" style="display:none;" onclick="updateUser()"><i class="fas fa-user-edit"></i> Actualizar Usuario</button>
+
+        <!-- Resultados -->
+        <div id="resultado-user" class="resultado"></div>
     </div>
-    <br>
-
-    <button onclick="postUser()"><i class="fas fa-user-plus"></i> POST user</button>
-    <button onclick="getUsers()"><i class="fas fa-users"></i> GET users</button>
-    <button id="btn-update-user" style="display:none;" onclick="updateUser()">UPDATE user</button>
-
-    <div id="resultado-user"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="callrestapi.js"></script>

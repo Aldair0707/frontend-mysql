@@ -91,8 +91,8 @@ function getUserById() {
                 '<td>' + user.age + '</td>' +
                 '<td>' + user.comments + '</td>' +
                 '<td>' +
-                '<button onclick="editarUser(' + user.id + ')">Editar</button> ' +
-                '<button onclick="deleteUser(' + user.id + ')">Eliminar</button>' +
+                '<button class="btn-edit-user" onclick="editarUser(' + user.id + ')">Editar</button> ' +
+                '<button class="btn-delete-user" onclick="deleteUser(' + user.id + ')">Eliminar</button>' +
                 '</td>' +
                 '</tr>' +
                 '</table>';
@@ -118,8 +118,8 @@ function getUsers() {
                 '<td>' + item.age + '</td>' +
                 '<td>' + item.comments + '</td>' +
                 '<td>' +
-                '<button onclick="editarUser(' + item.id + ')">Editar</button> ' +
-                '<button onclick="deleteUser(' + item.id + ')">Eliminar</button>' +
+                '<button class="btn-edit-user" onclick="editarUser(' + item.id + ')">Editar</button> ' +
+                '<button class="btn-delete-user" onclick="deleteUser(' + item.id + ')">Eliminar</button>' +
                 '</td>' +
                 '</tr>';
         });
